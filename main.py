@@ -5,17 +5,17 @@ from random import randint  #responsavel pela a colisao
 
 pygame.init()
 #...............Para colocar musica no jogo................
-pygame.mixer.music.set_volume(0.2)
-musica_de_fundo = pygame.mixer.music.load('smw_course_clear.wav')
+pygame.mixer.music.set_volume(0.2)#para controlar o volume do jogo
+musica_de_fundo = pygame.mixer.music.load('smw_course_clear.wav')#musica tirada no site da musica dos jogos
 pygame.mixer.music.play(-1)
 
-barulho_colisao = pygame.mixer.Sound('smw_coin.wav')
+barulho_colisao = pygame.mixer.Sound('smw_coin.wav')# o som da colisao do jogo
 largura= 640
 altura=480
 
 #OBS: m e x , z e y
-m=largura/2 #x
-z=altura/2 #y
+m=largura/2 #representa as medidas de x
+z=altura/2 # representa as medidas de y
 
 #para o retengulo azul conseguir mudar lugar
 x_azul=randint(40,600)
@@ -38,7 +38,8 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             exit()
-            #............Controlando os Objetos.........
+            #............Controlando os Objetos.............
+            #.......as teclas utilizadas para jogar sao W,A,S,D.................................
 
 
         if event.type == KEYDOWN:#se apertar qualquer tecla do meu teclado quero que acontece alguma coisa
@@ -82,5 +83,5 @@ while True:
         pontos= pontos + 1
         barulho_colisao.play()
     tela.blit(texto_formatado,(400,40))
-    pygame.display.update()
+    pygame.display.update()#linha codigo para a tela do jogo atulizar
 
